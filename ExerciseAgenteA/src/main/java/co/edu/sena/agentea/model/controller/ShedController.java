@@ -5,6 +5,7 @@
 package co.edu.sena.agentea.model.controller;
 
 import co.edu.sena.agentea.model.Shed;
+import co.edu.sena.agentea.model.controller.view.data.DataStore;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,14 +16,9 @@ import java.util.List;
  */
 public class ShedController implements IShedController{
     
-    public static List<Shed> shedlist = new ArrayList<>();
+    private List<Shed> shedlist = DataStore.getShedList();
     
-    public ShedController(){
-        shedlist.add(new Shed(1, "DISPONIBLE"));
-        shedlist.add(new Shed(2, "DISPONIBLE"));
-        shedlist.add(new Shed(3, "OCUPADO"));
-        
-    }
+    
 
     @Override
     public void insert(Shed shed) throws Exception {
